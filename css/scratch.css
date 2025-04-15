@@ -1,0 +1,61 @@
+/* Background setup */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-image: url('your-background.jpg'); /* Replace this with your actual image file */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: #f7e8d3; /* Light beige as fallback */
+    color: #fff;
+}
+
+
+/* Header section */
+.header {
+    background-color: rgba(15, 32, 75, 0.8);
+    padding: 40px;
+    text-align: center;
+}
+
+/* General content styling */
+.content {
+    background-color: rgba(15, 32, 75, 0.8);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* Footer */
+.footer {
+    background-color: rgba(15, 32, 75, 0.8);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Image styling */
+.main-image {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+/* Nav links */
+nav {
+    background-color: #222;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: #f9c74f;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

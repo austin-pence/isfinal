@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the Number Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .game-container {
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        input[type="number"] {
+            padding: 10px;
+            width: 50%;
+            margin: 10px 0;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+        .navigation {
+            margin-top: 20px;
+        }
+        .navigation a {
+            display: block;
+            margin: 10px 0;
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+<div class="game-container">
+    <h2>Guess the Number Game</h2>
+    <p>Guess a number between 1 and 100</p>
+    <input type="number" id="guess" placeholder="Enter your guess" min="1" max="100">
+    <br>
+    <button onclick="checkGuess()">Guess</button>
+    <div class="message" id="message"></div>
+
+    <!-- Navigation Links -->
+    <div class="navigation">
+        <a href="index.html">Professionalism Page</a>
+        <a href="scratch.html">Fun Facts About The Philippines</a>
+    </div>
+</div>
+
+<script>
+    // Generate a random number between 1 and 100
+    let targetNumber = Math.floor(Math.random() * 100) + 1;
+
+    // Function to check if the guess is correct
+    function checkGuess() {
+        const userGuess = parseInt(document.getElementById('guess').value);
+        const messageElement = document.getElementById('message');
+
+        if (userGuess === targetNumber) {
+            messageElement.textContent = "You guessed it! You win!";
+            messageElement.style.color = "green";
+            setTimeout(resetGame, 2000);  // Reset game after 2 seconds
+        } else if (userGuess < targetNumber) {
+            messageElement.textContent = "Too low! Try again.";
+            messageElement.style.color = "orange";
+        } else {
+            messageElement.textContent = "Too high! Try again.";
+            messageElement.style.color = "orange";
+        }
+    }
+
+    // Function to reset the game
+    function resetGame() {
+        // Reset the input and message
+        document.getElementById('guess').value = '';
+        document.getElementById('message').textContent = '';
+
+        // Generate a new random number
+        targetNumber = Math.floor(Math.random() * 100) + 1;
+    }
+</script>
+
+</body>
+</html>
